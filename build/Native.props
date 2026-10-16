@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <BaseClasses>$(MSBuildThisFileDirectory)..\vendor\windows-classic-samples\Samples\Win7Samples\multimedia\directshow\baseclasses</BaseClasses>
+    <OutDir>$(MSBuildThisFileDirectory)..\artifacts\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(MSBuildThisFileDirectory)obj\$(MSBuildProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(BaseClasses);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;UNICODE;_UNICODE;NDEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <Optimization>MaxSpeed</Optimization><Optimization Condition="'$(Configuration)' == 'Debug'">Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CallingConvention>StdCall</CallingConvention>
+      <ConformanceMode>false</ConformanceMode>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link><AdditionalDependencies>strmbase.lib;strmiids.lib;winmm.lib;shlwapi.lib;avrt.lib;ole32.lib;oleaut32.lib;uuid.lib;advapi32.lib;gdi32.lib;user32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies><AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories><SubSystem>Windows</SubSystem></Link>
+  </ItemDefinitionGroup>
+</Project>

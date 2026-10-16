@@ -1,3 +1,11 @@
 [submodule "configuration_setup_utility/jruby-swing-helpers"]
 	path = configuration_setup_utility/jruby-swing-helpers
 	url = https://rdp@github.com/rdp/ruby_simple_gui_creator.git
+[submodule "vendor/windows-classic-samples"]
+	path = vendor/windows-classic-samples
+	url = https://github.com/microsoft/Windows-classic-samples.git
+	shallow = true
+[submodule "vendor/virtual-audio"]
+	path = vendor/virtual-audio
+	url = https://github.com/rdp/virtual-audio-capture-grabber-device.git
+	shallow = true

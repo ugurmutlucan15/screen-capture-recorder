@@ -1,0 +1,6 @@
+.tools/
+artifacts/
+build/obj/
+*.pfx
+*.p12
+*.key

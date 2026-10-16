@@ -1,0 +1,10 @@
+﻿<Project>
+  <PropertyGroup>
+    <CtcommSigningThumbprint Condition="'$(CtcommSigningThumbprint)' == ''">$(CTCOMM_SIGNING_THUMBPRINT)</CtcommSigningThumbprint>
+    <CtcommSigningScript Condition="'$(CtcommSigningScript)' == ''">$(MSBuildThisFileDirectory)tools\signing\Sign-Artifact.ps1</CtcommSigningScript>
+  </PropertyGroup>
+  <Target Name="CtcommSignArtifact" AfterTargets="Link" Condition="'$(Configuration)' == 'Sürüm' and '$(ConfigurationType)' != 'StaticLibrary' and '$(DesignTimeBuild)' != 'true'">
+    <Error Condition="'$(CtcommSigningThumbprint)' == ''" Text="Run tools/signing/Setup-Signing.ps1 and restart Visual Studio." />
+    <Exec Command="powershell.exe -NoProfile -NonInteractive -File &quot;$(CtcommSigningScript)&quot; -Path &quot;$(TargetPath)&quot; -Thumbprint &quot;$(CtcommSigningThumbprint)&quot;" />
+  </Target>
+</Project>

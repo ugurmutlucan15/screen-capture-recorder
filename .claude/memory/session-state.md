@@ -1,0 +1,10 @@
+﻿# CTCOMM screen-capture-recorder build
+- Root D:/Azure/projects/screen-capture-recorder; registered DecisionNode Simpletouch App/devops-004 (get/search verified). codebase-memory-pro list_projects Transport closed; direct focused source reads used.
+- Clone includes pinned Microsoft Windows-classic-samples BaseClasses and virtual-audio submodules; original capture algorithms unmodified. New native v145/SDK10 /MT projects, solution wrapper builds Win32+x64 screen+audio then Inno.
+- Release leaves four DLLs and setup NotSigned. Sürüm signs four DLLs, Inno setup and uninstaller with CTCOMM HSM key; timestamp/publisher verified by Sign-Artifact. No private keys/API/credentials tracked.
+- Behavioral RED gate2passed1failed3total ->GREEN3/3; orchestration RED0/3 ->GREEN3/3; recovery nativeMSBuild Cert provider RED0/1 ->GREEN1/1; Inno temp adapter RED0/2 ->GREEN2/2; CLI path preservation RED2/3 ->GREEN3/3. Final Pester10passed0failed0skipped10total exit0.
+- Command: Invoke-Pester -Path tests (Pester5.7.1). Real BuildTools MSBuild ScreenCaptureRecorder.sln /t:Build /p:Configuration=Sürüm /p:Platform=x64 exit0. Installed Inno6.7.3 signed official installer under ignored .tools; no license purchased.
+- Four real DirectShow IBaseFilter creation probes passed in native 32/64bit PowerShell without registration. No actual capture or installed setup tested; existing system filter COM records preserved.
+- Signature evidence and build logs under .tools; outputs artifacts/Sürüm/setup/CTCOMM-ScreenCaptureRecorder-0.13.3-Setup.exe. Requested deliverables/dependencies retained, no blanket cleanup.
+- VS Enterprise native C++ files are available; real Enterprise MSBuild solution Sürüm build exited0 (visual-studio-signed-build.log). vswhere now confirms Enterprise isComplete=1 with VC.Tools.x86.x64; setup processes exited. Installer wrapper exit pending only. Upstream C++ warnings and licensing ambiguity documented; filter-only package excludes Ruby/Java/FFmpeg UI.
+- No push or deployment authorized/performed.

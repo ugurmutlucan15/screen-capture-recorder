@@ -1,0 +1,13 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<ItemGroup Label="ProjectConfigurations"><ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration><ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration><ProjectConfiguration Include="Sürüm|x64"><Configuration>Sürüm</Configuration><Platform>x64</Platform></ProjectConfiguration></ItemGroup>
+<PropertyGroup Label="Globals"><ProjectGuid>{24D66063-6C1C-4D32-9892-D4509A69D4E6}</ProjectGuid><ProjectName>CTCOMM.Setup</ProjectName></PropertyGroup>
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+<PropertyGroup Label="Configuration"><ConfigurationType>Utility</ConfigurationType><PlatformToolset>v145</PlatformToolset></PropertyGroup>
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+<PropertyGroup><OutDir>$(MSBuildThisFileDirectory)..\artifacts\$(Configuration)\setup\</OutDir><IntDir>$(MSBuildThisFileDirectory)obj\Setup\$(Configuration)\$(Platform)\</IntDir></PropertyGroup>
+<ItemGroup><None Include="..\tools\Build-Release.ps1"/><None Include="..\installer\CTCOMM.iss"/></ItemGroup>
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+<Target Name="CreateInstaller" AfterTargets="Build" Condition="'$(DesignTimeBuild)' != 'true'">
+<Exec Command="powershell.exe -NoProfile -File &quot;$(MSBuildThisFileDirectory)..\tools\Build-Release.ps1&quot; -Configuration &quot;$(Configuration)&quot;" />
+</Target>
+</Project>
